@@ -57,7 +57,11 @@ XML_TEMPLATE = """<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
 	<txt-record>txtvers=1</txt-record>
 	<txt-record>qtotal=1</txt-record>
 	<txt-record>Transparent=T</txt-record>
-	<txt-record>URF=none</txt-record>
+	<txt-record>Binary=T</txt-record>
+	<txt-record>Duplex=T</txt-record>
+	<txt-record>Copies=T</txt-record>
+	<txt-record>Color=F</txt-record>
+	<txt-record>URF=CP1,DM3</txt-record>
 </service>
 </service-group>"""
 
@@ -132,7 +136,7 @@ class AirPrintGenerate(object):
                 tree.parse(StringIO(XML_TEMPLATE.replace('\n', '').replace('\r', '').replace('\t', '')))
 
                 name = tree.find('name')
-                name.text = 'AirPrint %s @ %%h' % (p)
+                name.text = 'AirPrint %s @ %%h' % (v['printer-info'])
 
                 service = tree.find('service')
 
