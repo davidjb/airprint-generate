@@ -1,3 +1,15 @@
+> **Note:** CUPS 2.4.0 added native support for AirPrint so this project
+> is no longer required.
+>
+> For iOS to see and automatically set the correct default paper size,
+> set the options `DefaultPaperSize` and `ReadyPaperSizes` and be
+> aware that the CUPS cache (e.g. `/var/cache/cups`) may need to be
+> cleared and CUPS restarted for the changes to be effective.
+>
+> For details and commands for debugging, see
+> https://github.com/apple/cups/issues/6009#issuecomment-1099290442 and
+> subsequent comments in this thread.
+
 ## airprint-generate.py
 
 This script will generate avahi .service files for shared CUPS printers.
